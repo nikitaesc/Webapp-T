@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .alternative {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function register() {
+            const username = document.getElementById("username").value
+            fetch("/user", {
+                method: "POST",
+                body: JSON.stringify({
+                    username: username,
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            .then(response => response.json())
+            .then(result => {
+                // Handle the server's response, if needed
+                console.log(result);
+                localStorage.setItem('username', username);
+                window.location.href = '/dashboard';
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form onsubmit="register(); return false;">
+            <input type="text" class="input" id="username" name="username" placeholder="Username" required>
+            <input type="email" class="input" id="email" name="email" placeholder="Email" required>
+            <input type="password" class="input" id="password" name="password" placeholder="Password" required>
+            <button type="submit" class="button">Register</button>
+        </form>
+
+        <div class="alternative">
+            Already have an account? <a href="/">Login</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
