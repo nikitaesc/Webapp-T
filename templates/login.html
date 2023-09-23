@@ -81,7 +81,7 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(response.json());
+                    throw new Error("Login failed! The login information is incorrect.");
                 }
                 return response.json();
             })
@@ -90,8 +90,10 @@
                 localStorage.setItem('username', username);
                 window.location.href = '/dashboard';
             })
-            .catch(error => {
-                console.error("Error:", error);
+            .catch(err => {
+                console.error(err);
+                // let msg = err.substring(6);
+                alert(err)
             });
         }
     </script>
