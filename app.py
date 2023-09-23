@@ -43,6 +43,8 @@ def login_user():
 
       # If the username does not exist, return a 404 error
       return jsonify({"error": "User not found"}), 404
+   else:
+      return jsonify({"error": "Invalid JSON request"}), 400
 
 @app.route('/user', methods=['POST'])
 def create_user():

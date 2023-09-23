@@ -1,19 +1,23 @@
-# Web application using Azure App Service. The application have the following features:
+# Web application using Azure App Service
 
-*User registration and login functionality. 
+This repository contains a web application that provides User Registration and Login functionality, a user-specific Dashboard, and a RESTful API for performing CRUD operations on user data. The application is built using [python] and [flask], and it is designed to be deployed on Azure Web App Service.
 
-*Login page: Already registered used can directly login. If user try to login and username does not exist, return a 404 error.
-https://applicationtriluxo.azurewebsites.net 
-*Sign up page: New user can register here. 
-https://applicationtriluxo.azurewebsites.net/register
+# Features
 
-*A dashboard displaying user-specific information. 
-https://applicationtriluxo.azurewebsites.net/dashboard
+1.User Registration: Users can create an account by providing their username, email, and password. Passwords are securely hashed and stored in the database.
+2.User Login: Registered users can log in with their credentials (username and password).
+3.User Dashboard: Upon successful login, users are presented with a personalized dashboard that displays user-specific information.
+4.RESTful API: The application provides a RESTful API that allows users to perform CRUD (Create, Read, Update, Delete) operations on their data.
 
-*A RESTful API that allows users to perform CRUD operations on their data.
+# Prerequisites 
+Before running or deploying this application, ensure you have the following:
 
-# Steps:
-1. Creating an Azure account for web app.
-2. Making a web application using python flask which is supported by Azure App Service.
-3. Pushing code on git.
-4. Deplyoing the applicaton on azure.
+1.Azure Account (for Azure App Service deployment) 
+2.[Python] and [Flask] installed locally (for development) 
+3.A database service (e.g., Azure SQL Database) or a locally hosted database (e.g., PostgreSQL, MySQL) 
+4.Azure App Service CLI (for deployment)
+
+# Getting Started 
+Follow this link for the web app - https://applicationtriluxo.azurewebsites.net/register
+
+* Contact If you have any questions, feel free to contact {2nikitaesc@email.com].
