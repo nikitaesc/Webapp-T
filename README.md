@@ -15,7 +15,7 @@ This repository contains a web application that provides User Registration and L
 * Azure Account (for Azure App Service deployment) 
 * [Python] and [Flask] installed locally (for development) 
 * A database service (e.g., Azure SQL Database) or a locally hosted database (e.g., PostgreSQL, MySQL) 
-* Azure App Service CLI (for deployment)
+* Github action (for deployment)
 
 # Getting Started 
 Follow this link for the web app - https://applicationtriluxo.azurewebsites.net/register
